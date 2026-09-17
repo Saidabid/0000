@@ -29,7 +29,8 @@ keep_alive()
 # ⚙️ إعدادات التليجرام والبيانات الخاصة بك
 # =========================================================
 TELEGRAM_TOKEN = "8783436728:AAECJm4ar7Nveec7Jfyf1KTWrYQ9BX-q6lU"
-CHAT_ID = "61911827133"
+# 🌟 تم ربط قناتك العامة الجديدة هنا لإرسال التنبيهات داخلها فوراً بدون قيود
+CHAT_ID = "@said_fast_radar"
 
 last_btc_price = None
 last_gold_price = None
@@ -46,7 +47,6 @@ def get_market_data():
     btc_url = "https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m&limit=100"
     btc_res = requests.get(btc_url, timeout=10).json()
 
-    # استخراج أسعار الإغلاق والأعلى والأدنى بشكل صحيح من مصفوفة بينانس حسب الأندكسات المحددة من قبلك
     closes = [float(candle[4]) for candle in btc_res]
     highs = [float(candle[2]) for candle in btc_res]
     lows = [float(candle[3]) for candle in btc_res]
