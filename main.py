@@ -46,6 +46,7 @@ def get_market_data():
     btc_url = "https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m&limit=100"
     btc_res = requests.get(btc_url, timeout=10).json()
 
+    # 🌟 تم الإصلاح البرمجي لقراءة عناصر مصفوفة الشموع بدقة متناهية من سيرفر بينانس
     closes = [float(candle[4]) for candle in btc_res]
     highs = [float(candle[2]) for candle in btc_res]
     lows = [float(candle[3]) for candle in btc_res]
